@@ -1,0 +1,1 @@
+import{unsafeCSS as n}from"../../_snowpack/pkg/lit-element.js";export default function a(t,...r){const c=r.reduce((s,o,e)=>s+o+t[e+1],t[0]);return new Promise((s,o)=>{Sass.compile(c,e=>{e.text?s(n(e.text)):o(new Error("Sass Compiler failed. Check your code."))})})}
