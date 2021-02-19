@@ -41,14 +41,13 @@ export default class Playground extends LitElement {
     const typeSelect = this.shadowRoot.querySelector('#type');
 
     const checkVariation = () => {
-      if (
-        variationMap[this.variationValue].vel !== velocitySelect.value ||
-        variationMap[this.variationValue].vibe !== vibeSelect.value
-      ) {
-        variationSelect.value = 'n/a';
-      } else {
-        variationSelect.value = this.variationValue;
+      let variation = `${typeSelect.value}-${velocitySelect.value}`;
+
+      if (variationMap[variation].vibe !== vibeSelect.value) {
+        variation = 'n/a';
       }
+
+      variationSelect.value = variation;
     };
 
     const setType = () => {
