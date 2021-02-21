@@ -1,5 +1,12 @@
 import { unsafeCSS } from 'lit-element';
 
+function compile(sass, { resolve, reject }) {
+  window.Sass.compile(sass, result => {
+    if (result.text) resolve(unsafeCSS(result.text));
+    else reject(new Error(result.message));
+  });
+}
+
 /**
  *
  * @param { TemplateStringsArray } strings
@@ -13,10 +20,15 @@ export default function scss(strings, ...values) {
   );
 
   return new Promise((resolve, reject) => {
-    // eslint-disable-next-line no-undef
-    Sass.compile(sassText, result => {
-      if (result.text) resolve(unsafeCSS(result.text));
-      else reject(new Error('Sass Compiler failed. Check your code.'));
-    });
+    if (window.Sass) {
+      compile(sassText, { resolve, reject });
+    } else {
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/sass.js@0.11.1/dist/sass.sync.js';
+      script.type = 'text/javascript';
+      script.onload = () => compile(sassText, { resolve, reject });
+      script.onerror = () => reject(new Error(`Failed to load ${script.src}`));
+      document.head.appendChild(script);
+    }
   });
 }
