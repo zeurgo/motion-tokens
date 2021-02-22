@@ -1,1 +1,1 @@
-import i from"./dist/index.js";i();
+import i from"./dist/index.js";i({motionTokens:{}});

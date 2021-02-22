@@ -6,5 +6,6 @@
     "object-curly-newline": "off",
     "no-console": "warn",
     "arrow-parens": "off"
-  }
+  },
+  "ignorePatterns": "*.d.ts"
 }

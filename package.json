@@ -1,22 +1,20 @@
 {
-  "name": "arquitetura-jota",
+  "name": "jota-motion",
   "version": "0.0.1",
-  "module": "build/dist/index.js",
+  "module": "build/dist/styles/motion.js",
+  "types": "motion.d.ts",
   "files": [
-    "build/dist",
+    "build/dist/styles/motion.js",
+    "build/dist/styles/sass.js",
     "build/modules"
   ],
   "scripts": {
     "start": "snowpack dev",
-    "start:sb": "npm run build && npm run storybook",
     "build": "snowpack build",
     "test": "web-test-runner",
     "format": "prettier --write \"src/**/*.js\"",
     "lint": "prettier --check \"src/**/*.js\"",
-    "lint:eslint": "eslint --fix --ext .js,.html . --ignore-path .eslintignore",
-    "sass-render": "sass-render --suffix \".js\" -e src/styles/components/*/*.scss -t templates/css-template.js && prettier --write \"src/styles/components/*/*.js\"",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "lint:eslint": "eslint --fix --ext .js,.html . --ignore-path .eslintignore"
   },
   "dependencies": {
     "lit-element": "^2.3.1",
