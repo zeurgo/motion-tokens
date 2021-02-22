@@ -1,7 +1,7 @@
 import { merge } from 'lodash';
 import css from './sass.js';
 
-export const motionTokens = {
+export const baseMotionTokens = {
   'transition-duration-slow': '0.275s',
   'transition-duration-medium': '0.225s',
   'transition-duration-fast': '0.2s',
@@ -18,10 +18,10 @@ export const motionTokens = {
 
 function mergeTokens(tokens) {
   if (typeof tokens === 'object') {
-    return merge(motionTokens, tokens);
+    return merge(baseMotionTokens, tokens);
   }
 
-  return motionTokens;
+  return baseMotionTokens;
 }
 
 /**
@@ -31,33 +31,33 @@ export default function scss(tokens) {
   const mergedTokens = mergeTokens(tokens);
 
   return css`
-    *[motion*='slow'] {
+    [motion*='slow'] {
       transition-duration: ${mergedTokens['transition-duration-slow']};
     }
 
-    *[motion*='medium'] {
+    [motion*='medium'] {
       transition-duration: ${mergedTokens['transition-duration-medium']};
     }
 
-    *[motion*='fast'] {
+    [motion*='fast'] {
       transition-duration: ${mergedTokens['transition-duration-fast']};
     }
 
-    *[motion*='soft'] {
+    [motion*='soft'] {
       transition-timing-function: ${mergedTokens['transition-function-soft']};
     }
 
-    *[motion*='calm'] {
+    [motion*='calm'] {
       transition-timing-function: ${mergedTokens['transition-function-calm']};
     }
 
-    *[motion*='energic'] {
+    [motion*='energic'] {
       transition-timing-function: ${mergedTokens[
         'transition-function-energic'
       ]};
     }
 
-    *[motion*='hover']:hover {
+    [motion*='hover']:hover {
       &[motion*='fade'] {
         ${mergedTokens['transition-type-fade']}
       }
