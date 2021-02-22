@@ -6,7 +6,8 @@
   "files": [
     "build/dist/styles/motion.js",
     "build/dist/styles/sass.js",
-    "build/modules"
+    "build/modules",
+    "motion.d.ts"
   ],
   "scripts": {
     "start": "snowpack dev",
