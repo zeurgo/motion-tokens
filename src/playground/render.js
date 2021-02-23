@@ -75,7 +75,8 @@ export default function render() {
 
     <main>
       <div
-        motion="${this.motion.type} ${this.motion.velocity} ${this.motion.vibe} ${this.motion.trigger}"
+        motion="${this.motion.type} ${this.motion.velocity} ${this.motion
+          .vibe} ${this.motion.trigger}"
         id="square"
       >
         <span>Hover Me</span>
