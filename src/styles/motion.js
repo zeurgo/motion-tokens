@@ -25,7 +25,7 @@ function mergeTokens(tokens) {
 }
 
 /**
- * @param { motionTokens } tokens
+ * @param { baseMotionTokens } tokens
  */
 export default function scss(tokens) {
   const mergedTokens = mergeTokens(tokens);
@@ -86,13 +86,11 @@ export default function scss(tokens) {
 }
 
 /**
- * @param { motionTokens } tokens
+ * @param { baseMotionTokens } tokens
  * @param { Element[] } components
  */
 export async function useMotion(tokens, components, shadowRoot = false) {
-  const motionCSS = document.createTextNode(
-    (await scss(mergeTokens(tokens))).cssText,
-  );
+  const motionCSS = (await scss(mergeTokens(tokens))).cssText;
 
   components.forEach(cpt => {
     const component = shadowRoot ? cpt.shadowRoot : cpt;
@@ -101,7 +99,7 @@ export async function useMotion(tokens, components, shadowRoot = false) {
 
     const motionEl = document.createElement('style');
     motionEl.id = 'jota-motion';
-    motionEl.appendChild(motionCSS);
+    motionEl.innerHTML = motionCSS;
 
     component.appendChild(motionEl);
   });

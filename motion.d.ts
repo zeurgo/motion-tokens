@@ -7,7 +7,7 @@ import { CSSResult } from 'lit-element';
  *
  * `transition-type-*: <css-property: value;>#`
  */
-interface MotionTokens {
+declare interface BaseMotionTokens {
   'transition-duration-slow': string;
   'transition-duration-medium': string;
   'transition-duration-fast': string;
@@ -22,7 +22,16 @@ interface MotionTokens {
   'transition-type-scale-50p': string;
 }
 
-export const baseMotionTokens: MotionTokens;
+/**
+ * `transition-duration-*: Ns`
+ *
+ * `transition-function-*: cubic-bezier(N, N, N, N)`
+ *
+ * `transition-type-*: <css-property: value;>#`
+ */
+declare type UserBaseMotionTokens = Partial<BaseMotionTokens>;
+
+export const baseMotionTokens: BaseMotionTokens;
 
 /**
  * to insert the style into one or more HTML Elements
@@ -30,11 +39,11 @@ export const baseMotionTokens: MotionTokens;
  * @param {} shadowRoot if true the style will be inserted into the ShadowRoot. Default is `false`
  */
 export async function useMotion(
-  motionTokens: Partial<MotionTokens>,
+  motionTokens: UserBaseMotionTokens,
   components: Element[],
-  shadowRoot?: boolean,
+  shadowRoot = false,
 ): Promise<void>;
 
 export default function (
-  motionTokens: Partial<MotionTokens>,
+  motionTokens: UserBaseMotionTokens,
 ): Promise<CSSResult>;
