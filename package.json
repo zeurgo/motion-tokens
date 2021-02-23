@@ -4,8 +4,7 @@
   "module": "build/dist/styles/motion.js",
   "types": "motion.d.ts",
   "files": [
-    "build/dist/styles/motion.js",
-    "build/dist/styles/sass.js",
+    "build/dist/styles",
     "build/modules",
     "motion.d.ts"
   ],
