@@ -1,1 +1,1 @@
-import o from"./components/playground/index.js";import e from"./components/playground/styles.js";import r from"./styles/branding.js";import l from"./styles/global.js";async function a({brandingTokens:n,globalTokens:s}={}){const t={brandingTokens:r(n),globalTokens:l(s)};o.styles=[await e(t)],customElements.define("jota-playground",o)}export default a;
+import t from"./playground/index.js";import o from"./playground/styles.js";import e from"./styles/motion.js";async function r(){t.styles=[await o(),await e()],customElements.define("jota-playground",t)}export default r;
