@@ -1,4 +1,4 @@
-import o from"../../styles/sass.js";export default()=>o`
+import o from"../styles/sass.js";export default()=>o`
   div {
     display: flex;
     height: 100%;

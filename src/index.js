@@ -1,20 +1,11 @@
-import Playground from './components/playground/index.js';
-import getPlaygroundStyle from './components/playground/styles.js';
+import Playground from './playground/index.js';
+import getPlaygroundStyle from './playground/styles.js';
 
-import branding from './styles/branding.js';
-import global from './styles/global.js';
-import { useMotion } from './styles/motion.js';
+import getMotion from './styles/motion.js';
 
-async function register({ brandingTokens, globalTokens } = {}) {
-  const tokens = {
-    brandingTokens: branding(brandingTokens),
-    globalTokens: global(globalTokens),
-  };
-
-  Playground.styles = await getPlaygroundStyle(tokens);
+async function register() {
+  Playground.styles = [await getPlaygroundStyle(), await getMotion()];
   customElements.define('jota-playground', Playground);
-
-  await useMotion({}, document.querySelectorAll('.motion'), true);
 }
 
 export default register;

@@ -1,4 +1,4 @@
-import css from '../../styles/sass.js';
+import css from '../styles/sass.js';
 
 export default () => css`
   div {

@@ -1,4 +1,4 @@
-import{html as e}from"../../../modules/pkg/lit-element.js";export default function o(){return e`<div>
+import{html as e}from"../../modules/pkg/lit-element.js";export default function o(){return e`<div>
     <aside>
       <h1>Jota Design System</h1>
 

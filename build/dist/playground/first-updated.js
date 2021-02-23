@@ -1,4 +1,4 @@
-import{html as d}from"../../../modules/pkg/lit-element.js";import{upperFirst as s}from"../../../modules/pkg/lodash.js";function r(e){return d`
+import{html as d}from"../../modules/pkg/lit-element.js";import{upperFirst as s}from"../../modules/pkg/lodash.js";function r(e){return d`
     <option value="${e}-slow">${s(e)}-Slow</option>
     <option value="${e}-medium">${s(e)}-Medium</option>
     <option value="${e}-fast">${s(e)}-Fast</option>
