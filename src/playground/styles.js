@@ -1,4 +1,6 @@
-import e from"../../styles/sass.js";export default()=>e`
+import css from '../styles/sass.js';
+
+export default () => css`
   div {
     display: flex;
     height: 100%;
@@ -105,7 +107,6 @@ import e from"../../styles/sass.js";export default()=>e`
         align-items: center;
         background-color: #f50047;
         border-radius: 24px;
-        display: flex;
         height: 190px;
         justify-content: center;
         width: 190px;
@@ -116,56 +117,6 @@ import e from"../../styles/sass.js";export default()=>e`
           font-size: 16px;
           font-weight: 700;
           mix-blend-mode: difference;
-        }
-
-        &[velocity='slow'] {
-          transition-duration: 0.275s;
-        }
-
-        &[velocity='medium'] {
-          transition-duration: 0.225s;
-        }
-
-        &[velocity='fast'] {
-          transition-duration: 0.2s;
-        }
-
-        &[vibe='soft'] {
-          transition-timing-function: cubic-bezier(0.48, 0, 0.48, 1);
-        }
-
-        &[vibe='calm'] {
-          transition-timing-function: cubic-bezier(0.64, 0, 0.92, 1);
-        }
-
-        &[vibe='energic'] {
-          transition-timing-function: cubic-bezier(0.08, 0, 0.35, 1);
-        }
-
-        &:hover {
-          &[type='fade'] {
-            background-color: white;
-          }
-
-          &[type='spin'] {
-            transform: rotate(360deg);
-          }
-
-          &[type='scale-5p'] {
-            transform: scale(1.05);
-          }
-
-          &[type='scale-20p'] {
-            transform: scale(1.2);
-          }
-
-          &[type='scale-25p'] {
-            transform: scale(1.25);
-          }
-
-          &[type='scale-50p'] {
-            transform: scale(1.5);
-          }
         }
       }
     }

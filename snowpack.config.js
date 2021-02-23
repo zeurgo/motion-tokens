@@ -8,6 +8,8 @@ module.exports = {
   optimize: {
     minify: true,
   },
-  buildOptions: {},
+  buildOptions: {
+    metaUrlPath: 'modules',
+  },
   exclude: ['**/src/**/*.stories.js'],
 };
