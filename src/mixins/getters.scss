@@ -1,12 +1,12 @@
-@use '../base-motion-tokens' as base-tokens;
+@use '../base-motion-tokens';
 
 @mixin get-transition-duration($duration) {
   @if str-index($duration, 'slow') {
-    $duration: base-tokens.$transition-duration-slow;
+    $duration: base-motion-tokens.$transition-duration-slow;
   } @else if str-index($duration, 'medium') {
-    $duration: base-tokens.$transition-duration-medium;
+    $duration: base-motion-tokens.$transition-duration-medium;
   } @else if str-index($duration, 'fast') {
-    $duration: base-tokens.$transition-duration-fast;
+    $duration: base-motion-tokens.$transition-duration-fast;
   } @else {
     @error '#{$duration} is not valid';
   }
@@ -16,11 +16,11 @@
 
 @mixin get-transition-function($function) {
   @if str-index($function, 'soft') {
-    $function: base-tokens.$transition-function-soft;
+    $function: base-motion-tokens.$transition-function-soft;
   } @else if str-index($function, 'calm') {
-    $function: base-tokens.$transition-function-calm;
+    $function: base-motion-tokens.$transition-function-calm;
   } @else if str-index($function, 'energic') {
-    $function: base-tokens.$transition-function-energic;
+    $function: base-motion-tokens.$transition-function-energic;
   } @else {
     @error '#{$function} is not valid';
   }
@@ -30,11 +30,11 @@
 
 @mixin get-transition-type($type) {
   @if $type == 'fade' {
-    @include base-tokens.transition-type-fade();
+    @include base-motion-tokens.transition-type-fade();
   } @else if $type == 'spin' {
-    @include base-tokens.transition-type-spin();
+    @include base-motion-tokens.transition-type-spin();
   } @else if str-index($type, 'scale') {
-    @include base-tokens.transition-type-scale($type);
+    @include base-motion-tokens.transition-type-scale($type);
   } @else {
     @error '#{$type} is not valid';
   }

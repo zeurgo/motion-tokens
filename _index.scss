@@ -3,9 +3,6 @@
 @use './src/motion-tokens.scss';
 @use './src/keys.scss';
 
-@forward './src/base-motion-tokens.scss';
-@forward './src/keys.scss';
-
 $motion-tokens: motion-tokens.$list;
 
 @mixin motion($token: motion-tokens.$default, $triggers: 'hover') {
