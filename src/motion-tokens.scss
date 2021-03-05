@@ -1,0 +1,98 @@
+$default: (
+  'duration': '',
+  'function': '',
+  'type': '',
+);
+
+$list: (
+  'fade-slow': (
+    'duration': 'slow',
+    'function': 'calm',
+    'type': 'fade',
+  ),
+  'fade-medium': (
+    'duration': 'medium',
+    'function': 'calm',
+    'type': 'fade',
+  ),
+  'fade-fast': (
+    'duration': 'fast',
+    'function': 'calm',
+    'type': 'fade',
+  ),
+  'spin-slow': (
+    'duration': 'slow',
+    'function': 'energic',
+    'type': 'spin',
+  ),
+  'spin-medium': (
+    'duration': 'medium',
+    'function': 'energic',
+    'type': 'spin',
+  ),
+  'spin-fast': (
+    'duration': 'fast',
+    'function': 'energic',
+    'type': 'spin',
+  ),
+  'scale-05p-slow': (
+    'duration': 'slow',
+    'function': 'soft',
+    'type': 'scale-05p',
+  ),
+  'scale-05p-medium': (
+    'duration': 'medium',
+    'function': 'soft',
+    'type': 'scale-05p',
+  ),
+  'scale-05p-fast': (
+    'duration': 'fast',
+    'function': 'soft',
+    'type': 'scale-05p',
+  ),
+  'scale-20p-slow': (
+    'duration': 'slow',
+    'function': 'soft',
+    'type': 'scale-20p',
+  ),
+  'scale-20p-medium': (
+    'duration': 'medium',
+    'function': 'soft',
+    'type': 'scale-20p',
+  ),
+  'scale-20p-fast': (
+    'duration': 'fast',
+    'function': 'soft',
+    'type': 'scale-20p',
+  ),
+  'scale-25p-slow': (
+    'duration': 'slow',
+    'function': 'soft',
+    'type': 'scale-25p',
+  ),
+  'scale-25p-medium': (
+    'duration': 'medium',
+    'function': 'soft',
+    'type': 'scale-25p',
+  ),
+  'scale-25p-fast': (
+    'duration': 'fast',
+    'function': 'soft',
+    'type': 'scale-25p',
+  ),
+  'scale-50p-slow': (
+    'duration': 'slow',
+    'function': 'soft',
+    'type': 'scale-50p',
+  ),
+  'scale-50p-medium': (
+    'duration': 'medium',
+    'function': 'soft',
+    'type': 'scale-50p',
+  ),
+  'scale-50p-fast': (
+    'duration': 'fast',
+    'function': 'soft',
+    'type': 'scale-50p',
+  ),
+);
