@@ -2,7 +2,6 @@
   "name": "jota-motion",
   "version": "0.2.0",
   "description": "Jota Motion Library",
-  "main": "index.js",
   "repository": "https://github.com/Meiuca/jota-motion.git",
   "author": "Levi Pires <leviapires16@gmail.com>",
   "license": "MIT",
