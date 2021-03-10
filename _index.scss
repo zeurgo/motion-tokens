@@ -3,46 +3,27 @@
 @use './src/motion-tokens.scss';
 @use './src/keys.scss';
 
-$motion-tokens: motion-tokens.$list;
+$motion-token-list: motion-tokens.$list !default;
+$trigger-list: keys.$triggers !default;
 
-@mixin motion($token: motion-tokens.$default, $triggers: 'hover') {
-  @include getters.get-transition-duration(map-get($token, 'duration'));
+@mixin motion {
+  @each $token-name in map-keys($motion-token-list) {
+    $token: map-get($motion-token-list, $token-name);
 
-  @include getters.get-transition-function(map-get($token, 'function'));
+    [motion-token*='#{$token-name}'] {
+      @include getters.get-transition-duration(map-get($token, 'duration'));
 
-  @include util.multiple-selectors('&:%sel%', $triggers) {
-    @include getters.get-transition-type(map-get($token, 'type'));
-  }
-}
-
-@mixin dinamic-motion {
-  @each $duration in keys.$durations {
-    [motion*='#{$duration}'] {
-      @include getters.get-transition-duration($duration);
+      @include getters.get-transition-vibe(map-get($token, 'vibe'));
     }
   }
 
-  @each $function in keys.$functions {
-    [motion*='#{$function}'] {
-      @include getters.get-transition-function($function);
-    }
-  }
+  @include util.multiple-selectors("[motion-token*='%sel%']%sel%", $trigger-list) {
+    @each $token in map-keys($motion-token-list) {
+      $motion-token: map-get($motion-token-list, $token);
 
-  @include util.multiple-selectors("[motion*='%sel%']:%sel%", keys.$triggers) {
-    @each $type in keys.$types {
-      &[motion*='#{$type}'] {
-        @include getters.get-transition-type($type);
+      &[motion-token*='#{$token}'] {
+        @include getters.get-transition-type(map-get($motion-token, 'type'));
       }
     }
-  }
-}
-
-@mixin static-motion($token-name, $triggers: 'hover') {
-  $token: map-get(motion-tokens.$list, $token-name);
-
-  @if $token {
-    @include motion($token, $triggers);
-  } @else {
-    @error '#{$token-name} was not found';
   }
 }

@@ -1,12 +1,12 @@
-@use '../base-motion-tokens';
+@use '../animated-bases.scss';
 
 @mixin get-transition-duration($duration) {
   @if str-index($duration, 'slow') {
-    $duration: base-motion-tokens.$transition-duration-slow;
+    $duration: animated-bases.$transition-duration-slow;
   } @else if str-index($duration, 'medium') {
-    $duration: base-motion-tokens.$transition-duration-medium;
+    $duration: animated-bases.$transition-duration-medium;
   } @else if str-index($duration, 'fast') {
-    $duration: base-motion-tokens.$transition-duration-fast;
+    $duration: animated-bases.$transition-duration-fast;
   } @else {
     @error '#{$duration} is not valid';
   }
@@ -14,28 +14,26 @@
   transition-duration: $duration;
 }
 
-@mixin get-transition-function($function) {
-  @if str-index($function, 'soft') {
-    $function: base-motion-tokens.$transition-function-soft;
-  } @else if str-index($function, 'calm') {
-    $function: base-motion-tokens.$transition-function-calm;
-  } @else if str-index($function, 'energic') {
-    $function: base-motion-tokens.$transition-function-energic;
+@mixin get-transition-vibe($vibe) {
+  @if str-index($vibe, 'soft') {
+    $vibe: animated-bases.$transition-vibe-soft;
+  } @else if str-index($vibe, 'calm') {
+    $vibe: animated-bases.$transition-vibe-calm;
+  } @else if str-index($vibe, 'energic') {
+    $vibe: animated-bases.$transition-vibe-energic;
   } @else {
-    @error '#{$function} is not valid';
+    @error '#{$vibe} is not valid';
   }
 
-  transition-timing-function: $function;
+  transition-timing-function: $vibe;
 }
 
 @mixin get-transition-type($type) {
-  @if $type == 'fade' {
-    @include base-motion-tokens.transition-type-fade();
-  } @else if $type == 'spin' {
-    @include base-motion-tokens.transition-type-spin();
-  } @else if str-index($type, 'scale') {
-    @include base-motion-tokens.transition-type-scale($type);
-  } @else {
+  @if str-index($type, 'rotation') {
+    @include animated-bases.transition-type-spin($type);
+  } @else if str-index($type, 'expand') {
+    @include animated-bases.transition-type-expand($type);
+  } @else if not str-index($type, 'switch') {
     @error '#{$type} is not valid';
   }
 }

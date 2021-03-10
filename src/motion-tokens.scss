@@ -1,98 +1,53 @@
 $default: (
   'duration': '',
-  'function': '',
+  'vibe': '',
   'type': '',
 );
 
 $list: (
-  'fade-slow': (
+  'switch-slow': (
     'duration': 'slow',
-    'function': 'calm',
-    'type': 'fade',
+    'vibe': 'soft',
+    'type': 'switch',
   ),
-  'fade-medium': (
+  'switch-medium': (
     'duration': 'medium',
-    'function': 'calm',
-    'type': 'fade',
+    'vibe': 'calm',
+    'type': 'switch',
   ),
-  'fade-fast': (
+  'switch-fast': (
     'duration': 'fast',
-    'function': 'calm',
-    'type': 'fade',
+    'vibe': 'energic',
+    'type': 'switch',
   ),
   'spin-slow': (
     'duration': 'slow',
-    'function': 'energic',
-    'type': 'spin',
+    'vibe': 'soft',
+    'type': 'rotation-tilt',
   ),
   'spin-medium': (
     'duration': 'medium',
-    'function': 'energic',
-    'type': 'spin',
+    'vibe': 'calm',
+    'type': 'rotation-flip',
   ),
   'spin-fast': (
     'duration': 'fast',
-    'function': 'energic',
-    'type': 'spin',
+    'vibe': 'energic',
+    'type': 'rotation-roll',
   ),
-  'scale-05p-slow': (
+  'expand-slow': (
     'duration': 'slow',
-    'function': 'soft',
-    'type': 'scale-05p',
+    'vibe': 'soft',
+    'type': 'expand-small',
   ),
-  'scale-05p-medium': (
+  'expand-medium': (
     'duration': 'medium',
-    'function': 'soft',
-    'type': 'scale-05p',
+    'vibe': 'calm',
+    'type': 'expand-medium',
   ),
-  'scale-05p-fast': (
+  'expand-fast': (
     'duration': 'fast',
-    'function': 'soft',
-    'type': 'scale-05p',
-  ),
-  'scale-20p-slow': (
-    'duration': 'slow',
-    'function': 'soft',
-    'type': 'scale-20p',
-  ),
-  'scale-20p-medium': (
-    'duration': 'medium',
-    'function': 'soft',
-    'type': 'scale-20p',
-  ),
-  'scale-20p-fast': (
-    'duration': 'fast',
-    'function': 'soft',
-    'type': 'scale-20p',
-  ),
-  'scale-25p-slow': (
-    'duration': 'slow',
-    'function': 'soft',
-    'type': 'scale-25p',
-  ),
-  'scale-25p-medium': (
-    'duration': 'medium',
-    'function': 'soft',
-    'type': 'scale-25p',
-  ),
-  'scale-25p-fast': (
-    'duration': 'fast',
-    'function': 'soft',
-    'type': 'scale-25p',
-  ),
-  'scale-50p-slow': (
-    'duration': 'slow',
-    'function': 'soft',
-    'type': 'scale-50p',
-  ),
-  'scale-50p-medium': (
-    'duration': 'medium',
-    'function': 'soft',
-    'type': 'scale-50p',
-  ),
-  'scale-50p-fast': (
-    'duration': 'fast',
-    'function': 'soft',
-    'type': 'scale-50p',
+    'vibe': 'energic',
+    'type': 'expand-large',
   ),
 );
