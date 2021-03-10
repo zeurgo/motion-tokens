@@ -6,24 +6,22 @@
 $motion-token-list: motion-tokens.$list !default;
 $trigger-list: keys.$triggers !default;
 
-@mixin motion {
-  @each $token-name in map-keys($motion-token-list) {
-    $token: map-get($motion-token-list, $token-name);
+@each $token-name in map-keys($motion-token-list) {
+  $token: map-get($motion-token-list, $token-name);
 
-    [motion-token*='#{$token-name}'] {
-      @include getters.get-transition-duration(map-get($token, 'duration'));
+  [motion-token*='#{$token-name}'] {
+    @include getters.get-transition-duration(map-get($token, 'duration'));
 
-      @include getters.get-transition-vibe(map-get($token, 'vibe'));
-    }
+    @include getters.get-transition-vibe(map-get($token, 'vibe'));
   }
+}
 
-  @include util.multiple-selectors("[motion-token*='%sel%']%sel%", $trigger-list) {
-    @each $token in map-keys($motion-token-list) {
-      $motion-token: map-get($motion-token-list, $token);
+@include util.multiple-selectors("[motion-token*='%sel%']%sel%", $trigger-list) {
+  @each $token in map-keys($motion-token-list) {
+    $motion-token: map-get($motion-token-list, $token);
 
-      &[motion-token*='#{$token}'] {
-        @include getters.get-transition-type(map-get($motion-token, 'type'));
-      }
+    &[motion-token*='#{$token}'] {
+      @include getters.get-transition-type(map-get($motion-token, 'type'));
     }
   }
 }
