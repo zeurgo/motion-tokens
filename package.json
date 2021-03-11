@@ -5,6 +5,11 @@
   "repository": "https://github.com/Meiuca/jota-motion.git",
   "author": "Levi Pires <leviapires16@gmail.com>",
   "license": "MIT",
+  "files": [
+    "src",
+    "_index.scss",
+    "helpers.scss"
+  ],
   "devDependencies": {
     "jota-sass-render": "https://github.com/Meiuca/jota-sass-render"
   }
