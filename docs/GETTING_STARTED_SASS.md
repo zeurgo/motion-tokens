@@ -11,7 +11,7 @@ property.
 ```scss
 // You can use `with (trigger-list: (...))`
 // to override the default trigger list: (':hover', ':active', ':focus')
-@use 'motion-tokens' with ($trigger-list: ('.open', ':focus'));
+@use '@meiuca/motion-tokens' with ($trigger-list: ('.open', ':focus'));
 
 .my-style {
   // your stuff
@@ -62,7 +62,7 @@ Use this mixin as a helper to inject the properties directly at the element styl
 ```scss
 // You can use `with (trigger-list: (...))`
 // to override the default trigger list: (':hover', ':active', ':focus')
-@use 'motion-tokens/helpers.scss' with ($trigger-list: ('.open', ':focus'));
+@use '@meiuca/motion-tokens/helpers.scss' with ($trigger-list: ('.open', ':focus'));
 
 .my-style {
   @include helpers.inject-motion('switch-slow');
@@ -99,7 +99,7 @@ Output:
 **When you have the same changes occuring for all triggers, you can use it this way:**
 
 ```scss
-@use 'motion-tokens/helpers.scss';
+@use '@meiuca/motion-tokens/helpers.scss';
 
 .my-style {
   @include helpers.inject-motion('switch-slow', ('.open', ':focus')) {

@@ -6,7 +6,7 @@ The default import provides a global style injection that must be used with the 
 property.
 
 ```js
-import getMotionTokens from 'motion-tokens';
+import getMotionTokens from '@meiuca/motion-tokens';
 
 `
 ${getMotionTokens()}
@@ -61,7 +61,7 @@ Use this helper to inject the properties directly at the element style.
 **When you have different changes for each trigger, you can use it this way:**
 
 ```js
-import { injectMotion } from 'jota-motion/helpers.js';
+import { injectMotion } from '@meiuca/motion-tokens/helpers.js';
 
 `
 .my-style {
@@ -102,7 +102,7 @@ Output:
 **When you have the same changes occuring for all triggers, you can use it this way:**
 
 ```js
-import { injectMotion } from 'jota-motion/helpers.js';
+import { injectMotion } from '@meiuca/motion-tokens/helpers.js';
 
 const bindedInject = injectMotion.bind({
   content: 'color: red;',
