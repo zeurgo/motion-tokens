@@ -1,9 +1,9 @@
-# Jota Motion
+# Motion Tokens
 
 ## Installation
 
 ```bash
-yarn add jota-motion
+yarn add @meiuca/motion-tokens
 ```
 
 ## Getting Started
