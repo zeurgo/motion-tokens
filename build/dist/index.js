@@ -1,1 +1,0 @@
-import t from"./playground/index.js";import o from"./playground/styles.js";import e from"./styles/motion.js";async function r(){t.styles=[await o(),await e()],customElements.define("jota-playground",t)}export default r;

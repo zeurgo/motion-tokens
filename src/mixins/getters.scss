@@ -1,0 +1,39 @@
+@use '../animated-bases.scss';
+
+@mixin get-transition-duration($duration) {
+  @if str-index($duration, 'slow') {
+    $duration: animated-bases.$transition-duration-slow;
+  } @else if str-index($duration, 'medium') {
+    $duration: animated-bases.$transition-duration-medium;
+  } @else if str-index($duration, 'fast') {
+    $duration: animated-bases.$transition-duration-fast;
+  } @else {
+    @error '#{$duration} is not valid';
+  }
+
+  transition-duration: $duration;
+}
+
+@mixin get-transition-vibe($vibe) {
+  @if str-index($vibe, 'soft') {
+    $vibe: animated-bases.$transition-vibe-soft;
+  } @else if str-index($vibe, 'calm') {
+    $vibe: animated-bases.$transition-vibe-calm;
+  } @else if str-index($vibe, 'energetic') {
+    $vibe: animated-bases.$transition-vibe-energetic;
+  } @else {
+    @error '#{$vibe} is not valid';
+  }
+
+  transition-timing-function: $vibe;
+}
+
+@mixin get-transition-type($type) {
+  @if str-index($type, 'rotation') {
+    @include animated-bases.transition-type-spin($type);
+  } @else if str-index($type, 'scale') {
+    @include animated-bases.transition-type-scale($type);
+  } @else if not str-index($type, 'switch') {
+    @error '#{$type} is not valid';
+  }
+}

@@ -1,9 +1,0 @@
-src
-templates
-test
-.eslintrc
-.prettierrc
-babel.config.json
-snowpack.config.js
-web-test-runner.config.js
-*.stories.js
