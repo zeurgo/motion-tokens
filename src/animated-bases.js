@@ -1,5 +1,5 @@
 export const transitionDurationSlow = '0.275s';
-export const transitionMurationMedium = '0.225s';
+export const transitionDurationMedium = '0.225s';
 export const transitionDurationFast = '0.15s';
 
 export const transitionVibeSoft = 'cubic-bezier(0.48, 0, 0.48, 1)';
