@@ -1,16 +1,23 @@
 {
-  "name": "jota-motion",
-  "version": "0.2.0",
+  "name": "motion-tokens",
+  "version": "0.4.0",
   "description": "Jota Motion Library",
-  "repository": "https://github.com/Meiuca/jota-motion.git",
+  "repository": "https://github.com/Meiuca/motion-tokens.git",
   "author": "Levi Pires <leviapires16@gmail.com>",
   "license": "MIT",
   "files": [
     "src",
     "_index.scss",
-    "helpers.scss"
+    "index.js",
+    "helpers.scss",
+    "helpers.js"
   ],
+  "main": "index.js",
+  "module": "index.js",
+  "type": "module",
   "devDependencies": {
-    "jota-sass-render": "https://github.com/Meiuca/jota-sass-render"
-  }
+    "sass-render": "Meiuca/sass-render"
+  },
+  "dependencies": {},
+  "peerDependencies": {}
 }

@@ -128,14 +128,6 @@ is-number@^7.0.0:
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-7.0.0.tgz#7535345b896734d5f80c4d06c50955527a14f12b"
   integrity sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==
 
-"jota-sass-render@https://github.com/Meiuca/jota-sass-render":
-  version "0.2.0"
-  resolved "https://github.com/Meiuca/jota-sass-render#a1742fafd03235321eba8bbe25715c60700f6081"
-  dependencies:
-    glob "^7.1.6"
-    prettier "^2.2.1"
-    sass "^1.32.8"
-
 minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
@@ -176,6 +168,14 @@ readdirp@~3.5.0:
   integrity sha512-cMhu7c/8rdhkHXWsY+osBhfSy0JikwpHK/5+imo+LpeasTF8ouErHrlYkwT0++njiyuDvc7OFY5T3ukvZ8qmFQ==
   dependencies:
     picomatch "^2.2.1"
+
+sass-render@Meiuca/sass-render:
+  version "0.2.1"
+  resolved "https://codeload.github.com/Meiuca/sass-render/tar.gz/b77f79beec380e43c4e42bb1f6488ded63553cf5"
+  dependencies:
+    glob "^7.1.6"
+    prettier "^2.2.1"
+    sass "^1.32.8"
 
 sass@^1.32.8:
   version "1.32.8"
