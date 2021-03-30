@@ -1,3 +1,4 @@
-.snowpack
 node_modules
-coverage
+test-css.js
+test.scss
+test-js.js
