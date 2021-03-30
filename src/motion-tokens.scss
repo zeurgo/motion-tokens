@@ -17,7 +17,7 @@ $list: (
   ),
   'switch-fast': (
     'duration': 'fast',
-    'vibe': 'energic',
+    'vibe': 'energetic',
     'type': 'switch',
   ),
   'spin-slow': (
@@ -32,22 +32,22 @@ $list: (
   ),
   'spin-fast': (
     'duration': 'fast',
-    'vibe': 'energic',
-    'type': 'rotation-roll',
+    'vibe': 'energetic',
+    'type': 'rotation-tilt',
   ),
-  'expand-slow': (
-    'duration': 'slow',
+  'expand-small': (
+    'duration': 'fast',
     'vibe': 'soft',
-    'type': 'expand-small',
+    'type': 'scale-small',
   ),
   'expand-medium': (
     'duration': 'medium',
     'vibe': 'calm',
-    'type': 'expand-medium',
+    'type': 'scale-medium',
   ),
-  'expand-fast': (
-    'duration': 'fast',
-    'vibe': 'energic',
-    'type': 'expand-large',
+  'expand-large': (
+    'duration': 'slow',
+    'vibe': 'energetic',
+    'type': 'scale-large',
   ),
 );

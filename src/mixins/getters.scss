@@ -19,8 +19,8 @@
     $vibe: animated-bases.$transition-vibe-soft;
   } @else if str-index($vibe, 'calm') {
     $vibe: animated-bases.$transition-vibe-calm;
-  } @else if str-index($vibe, 'energic') {
-    $vibe: animated-bases.$transition-vibe-energic;
+  } @else if str-index($vibe, 'energetic') {
+    $vibe: animated-bases.$transition-vibe-energetic;
   } @else {
     @error '#{$vibe} is not valid';
   }
@@ -31,8 +31,8 @@
 @mixin get-transition-type($type) {
   @if str-index($type, 'rotation') {
     @include animated-bases.transition-type-spin($type);
-  } @else if str-index($type, 'expand') {
-    @include animated-bases.transition-type-expand($type);
+  } @else if str-index($type, 'scale') {
+    @include animated-bases.transition-type-scale($type);
   } @else if not str-index($type, 'switch') {
     @error '#{$type} is not valid';
   }
