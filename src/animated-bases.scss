@@ -1,0 +1,46 @@
+$transition-duration-slow: 0.275s;
+$transition-duration-medium: 0.225s;
+$transition-duration-fast: 0.15s;
+
+$transition-vibe-soft: cubic-bezier(0.48, 0, 0.48, 1);
+$transition-vibe-energetic: cubic-bezier(0.64, 0, 0.92, 1);
+$transition-vibe-calm: cubic-bezier(0.08, 0, 0.35, 1);
+
+@mixin transition-type-spin($deg: 'roll') {
+  $rotation: 0deg;
+
+  @if str-index($deg, 'tilt') {
+    $rotation: 90deg;
+  } @else if str-index($deg, 'flip') {
+    $rotation: 180deg;
+  } @else if str-index($deg, 'roll') {
+    $rotation: 360deg;
+  } @else {
+    @error '#{$deg} is not valid';
+  }
+
+  transform: rotate($rotation);
+  -webkit-transform: rotate($rotation);
+  -moz-transform: rotate($rotation);
+  -ms-transform: rotate($rotation);
+  -o-transform: rotate($rotation);
+}
+@mixin transition-type-scale($p) {
+  $scale: 0;
+
+  @if str-index($p, 'small') {
+    $scale: 1.05;
+  } @else if str-index($p, 'medium') {
+    $scale: 1.25;
+  } @else if str-index($p, 'large') {
+    $scale: 1.5;
+  } @else {
+    @error '#{$p} is not valid';
+  }
+
+  transform: scale($scale);
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale);
+  -ms-transform: scale($scale);
+  -o-transform: scale($scale);
+}
