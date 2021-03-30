@@ -20,7 +20,10 @@ export function injectMotion(motionTokenId, triggers = triggerList) {
     `;
 
   if (motionTokens[motionTokenId].type !== 'switch') {
-    triggerListContent = `${getters.getTransitionType(motionTokens[motionTokenId].type)}`;
+    triggerListContent =
+      `${getters.getTransitionType(motionTokens[motionTokenId].type)}` +
+      '\n\n' +
+      `${this?.content || ''}`;
   }
 
   return (
