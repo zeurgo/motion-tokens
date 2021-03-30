@@ -1,25 +1,26 @@
 # Getting Started
 
-Before using, you will need to add the **node_modules** path in the **node-sass -> includePaths** config. The
-[sass-render](https://github.com/Meiuca/sass-render) does this job automatically.
-
 ## Using Default Import
 
-The default `@use` provides a global style injection that must be used with the `motion-token` tag property.
+The default import provides a global style injection that must be used with the `motion-token` tag
+property.
 
-```scss
-// You can use `with (trigger-list: (...))`
-// to override the default trigger list: (':hover', ':active', ':focus')
-@use 'jota-motion' with ($trigger-list: ('.open', ':focus'));
+```js
+import getMotionTokens from 'motion-tokens';
+
+`
+${getMotionTokens()}
 
 .my-style {
   // your stuff
 }
+`;
 ```
 
 Output:
 
-```scss
+```js
+`
 // ...other motion tokens...
 
 [motion-token*='spin-slow'] {
@@ -43,6 +44,7 @@ Output:
 .my-style {
   // your stuff
 }
+`;
 ```
 
 Element Syntax:
@@ -54,17 +56,16 @@ Element Syntax:
 
 ## Using `inject-motion`
 
-Use this mixin as a helper to inject the properties directly at the element style.
+Use this helper to inject the properties directly at the element style.
 
 **When you have different changes for each trigger, you can use it this way:**
 
-```scss
-// You can use `with (trigger-list: (...))`
-// to override the default trigger list: (':hover', ':active', ':focus')
-@use 'jota-motion/helpers.scss' with ($trigger-list: ('.open', ':focus'));
+```js
+import { injectMotion } from 'jota-motion/helpers.js';
 
+`
 .my-style {
-  @include helpers.inject-motion('switch-slow');
+  ${injectMotion('switch-slow')}
 
   // your stuff
 
@@ -76,11 +77,13 @@ Use this mixin as a helper to inject the properties directly at the element styl
     color: palevioletred;
   }
 }
+`;
 ```
 
 Output:
 
-```scss
+```js
+`
 .my-style {
   transition-duration: 0.275s;
   transition-timing-function: cubic-bezier(0.48, 0, 0.48, 1);
@@ -93,23 +96,29 @@ Output:
 .my-style:focus {
   color: palevioletred;
 }
+`;
 ```
 
 **When you have the same changes occuring for all triggers, you can use it this way:**
 
-```scss
-@use 'jota-motion/helpers.scss';
+```js
+import { injectMotion } from 'jota-motion/helpers.js';
 
+const bindedInject = injectMotion.bind({
+  content: 'color: red;',
+});
+
+`
 .my-style {
-  @include helpers.inject-motion('switch-slow', ('.open', ':focus')) {
-    color: red;
-  }
+  ${bindedInject('switch-slow', ['.open', ':focus'])}
 }
+`;
 ```
 
 Output
 
-```scss
+```js
+`
 .my-style {
   transition-duration: 0.275s;
   transition-timing-function: cubic-bezier(0.48, 0, 0.48, 1);
@@ -118,6 +127,7 @@ Output
 .my-style:focus {
   color: red;
 }
+`;
 ```
 
 ## Animated Bases
