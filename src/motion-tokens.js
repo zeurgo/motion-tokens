@@ -1,0 +1,53 @@
+export const motionTokensObject = {
+  duration: '',
+  vibe: '',
+  type: '',
+};
+
+export default {
+  'switch-slow': {
+    duration: 'slow',
+    vibe: 'soft',
+    type: 'switch',
+  },
+  'switch-medium': {
+    duration: 'medium',
+    vibe: 'calm',
+    type: 'switch',
+  },
+  'switch-fast': {
+    duration: 'fast',
+    vibe: 'energetic',
+    type: 'switch',
+  },
+  'spin-slow': {
+    duration: 'slow',
+    vibe: 'soft',
+    type: 'rotation-tilt',
+  },
+  'spin-medium': {
+    duration: 'medium',
+    vibe: 'calm',
+    type: 'rotation-flip',
+  },
+  'spin-fast': {
+    duration: 'fast',
+    vibe: 'energetic',
+    type: 'rotation-tilt',
+  },
+  'expand-small': {
+    duration: 'fast',
+    vibe: 'soft',
+    type: 'scale-small',
+  },
+  'expand-medium': {
+    duration: 'medium',
+    vibe: 'calm',
+    type: 'scale-medium',
+  },
+  'expand-large': {
+    duration: 'slow',
+    vibe: 'energetic',
+    type: 'scale-large',
+  },
+};
