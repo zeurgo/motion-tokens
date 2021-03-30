@@ -6,7 +6,7 @@ export function getTransitionDuration(duration) {
   if (duration?.includes('slow')) {
     _duration = animatedBases.transitionDurationSlow;
   } else if (duration.includes('medium')) {
-    _duration = animatedBases.transitionMurationMedium;
+    _duration = animatedBases.transitionDurationMedium;
   } else if (duration.includes('fast')) {
     _duration = animatedBases.transitionDurationFast;
   } else {
