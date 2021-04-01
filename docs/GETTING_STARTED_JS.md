@@ -89,12 +89,14 @@ Output:
   transition-timing-function: cubic-bezier(0.48, 0, 0.48, 1);
 
   // your stuff
-}
-.my-style.open {
-  color: red;
-}
-.my-style:focus {
-  color: palevioletred;
+
+  &.open {
+    color: red;
+  }
+
+  &:focus {
+    color: palevioletred;
+  }
 }
 `;
 ```
@@ -122,10 +124,11 @@ Output
 .my-style {
   transition-duration: 0.275s;
   transition-timing-function: cubic-bezier(0.48, 0, 0.48, 1);
-}
-.my-style.open,
-.my-style:focus {
-  color: red;
+
+  &.open,
+  &:focus {
+    color: red;
+  }
 }
 `;
 ```
