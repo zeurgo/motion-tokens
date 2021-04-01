@@ -3,9 +3,7 @@ export function multipleSelectors(base, selectors) {
     throw new Error('base is invalid');
   }
 
-  const mappedSelectors = selectors?.map(selector => {
-    return base?.replace(/%sel%/g, selector);
-  });
+  const mappedSelectors = selectors?.map(selector => base?.replace(/%sel%/g, selector));
 
   return `${(mappedSelectors || ['.empty']).join()} {
       ${this?.content || ''}

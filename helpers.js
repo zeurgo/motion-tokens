@@ -27,6 +27,6 @@ export function injectMotion(motionTokenId, triggers = triggerList) {
   }
 
   return (
-    _return + '\n' + multipleSelectors.call({ content: triggerListContent }, '&%sel%', triggers)
+    `${_return  }\n${  multipleSelectors.call({ content: triggerListContent }, '&%sel%', triggers)}`
   );
 }

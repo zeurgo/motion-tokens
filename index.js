@@ -30,12 +30,12 @@ export default function getMotionTokens(tokens = motionTokens, triggers = trigge
   }
 
   return (
-    _return +
-    '\n' +
+    `${_return 
+    }\n${ 
     multipleSelectors.call(
       { content: triggerListContent },
       "[motion-token*='%sel%']%sel%",
       triggers,
-    )
+    )}`
   );
 }

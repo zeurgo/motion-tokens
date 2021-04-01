@@ -35,9 +35,13 @@ export function getTransitionVibe(vibe) {
 export function getTransitionType(type) {
   if (type?.includes('rotation')) {
     return animatedBases.transitionTypeSpin(type);
-  } else if (type?.includes('scale')) {
-    return animatedBases.transitionTypeScale(type);
-  } else if (!type?.includes('switch')) {
-    throw new Error(`${type} is not valid`);
   }
+  if (type?.includes('scale')) {
+    return animatedBases.transitionTypeScale(type);
+  }
+  if (type?.includes('switch')) {
+    return '';
+  }
+
+  throw new Error(`${type} is not valid`);
 }
