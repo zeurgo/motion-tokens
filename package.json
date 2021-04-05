@@ -13,8 +13,8 @@
     "helpers.js"
   ],
   "scripts": {
-    "format": "prettier --write \"(src|test)/**/*.(js|d.ts|scss)\"",
-    "lint": "prettier --check \"(src|test)/**/*.(js|d.ts|scss)\"",
+    "format": "prettier --write \"**/*.(js|d.ts|scss)\"",
+    "lint": "prettier --check \"**/*.(js|d.ts|scss)\"",
     "test": "web-test-runner",
     "eslint": "eslint --ext .js,.mjs,.html . --ignore-path .gitignore",
     "prepare": "husky install"
