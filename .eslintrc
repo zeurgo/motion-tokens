@@ -9,6 +9,12 @@
         "import/no-extraneous-dependencies": "off",
         "import/no-unresolved": "warn"
       }
+    },
+    {
+      "files": ["commitlint.config.cjs"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
     }
   ]
 }
