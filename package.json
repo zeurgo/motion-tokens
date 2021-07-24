@@ -5,6 +5,9 @@
   "repository": "https://github.com/Meiuca/motion-tokens.git",
   "author": "Meiuca <meiuca@meiuca.design>",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "src",
     "_index.scss",
