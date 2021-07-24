@@ -3,7 +3,7 @@
 ## Installation
 
 ```bash
-yarn add @meiuca/motion-tokens
+yarn add @jota-ds/motion-tokens
 ```
 
 ## Getting Started
