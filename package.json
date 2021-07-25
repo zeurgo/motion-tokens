@@ -1,6 +1,6 @@
 {
   "name": "@jota-ds/motion-tokens",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Motion Tokens Library",
   "repository": "https://github.com/Meiuca/motion-tokens.git",
   "author": "Meiuca <meiuca@meiuca.design>",
@@ -13,7 +13,9 @@
     "_index.scss",
     "index.js",
     "helpers.scss",
-    "helpers.js"
+    "helpers.js",
+    "babel.config.json",
+    ".babelrc"
   ],
   "scripts": {
     "format": "prettier --write \"**/*.(js|d.ts|scss)\"",
