@@ -23,7 +23,7 @@ export function injectMotion(motionTokenId, triggers = triggerList) {
     triggerListContent =
       `${getters.getTransitionType(motionTokens[motionTokenId].type)}` +
       '\n\n' +
-      `${this?.content || ''}`;
+      `${typeof this !== 'undefined' ? (this.content || ''):''}`;
   }
 
   return `${_return}\n${multipleSelectors.call(

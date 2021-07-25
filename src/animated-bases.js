@@ -30,14 +30,16 @@ export function transitionTypeSpin(deg = 'roll') {
 export function transitionTypeScale(scale) {
   let _scale;
 
-  if (scale?.includes('small')) {
-    _scale = 1.05;
-  } else if (scale?.includes('medium')) {
-    _scale = 1.25;
-  } else if (scale?.includes('large')) {
-    _scale = 1.5;
-  } else {
-    throw new Error(`${scale} is not valid`);
+  if(typeof scale !== "undefined"){
+    if (scale.includes('small')) {
+      _scale = 1.05;
+    } else if (scale.includes('medium')) {
+      _scale = 1.25;
+    } else if (scale.includes('large')) {
+      _scale = 1.5;
+    } else {
+      throw new Error(`${scale} is not valid`);
+    }
   }
 
   return `

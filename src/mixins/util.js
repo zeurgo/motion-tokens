@@ -1,11 +1,19 @@
 export function multipleSelectors(base, selectors) {
-  if (!base?.includes('%sel%')) {
+  if (typeof base !== 'undefined' && !base.includes('%sel%')) {
     throw new Error('base is invalid');
   }
 
-  const mappedSelectors = selectors?.map(selector => base?.replace(/%sel%/g, selector));
+  let mappedSelectors = [];
+
+  if(typeof selectors !== 'undefined'){
+    mappedSelectors = selectors.map(selector => {
+      if(typeof base !== 'undefined'){
+        return base.replace(/%sel%/g, selector)
+      }
+    });
+  }
 
   return `${(mappedSelectors || ['.empty']).join()} {
-      ${this?.content || ''}
+      ${typeof this !== 'undefined' ? (this.content || ''): ''}
     }`;
 }
