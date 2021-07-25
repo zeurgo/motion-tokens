@@ -1,6 +1,6 @@
 {
   "name": "@jota-ds/motion-tokens",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Motion Tokens Library",
   "repository": "https://github.com/Meiuca/motion-tokens.git",
   "author": "Meiuca <meiuca@meiuca.design>",
@@ -43,6 +43,7 @@
     "sass-render": "Meiuca/sass-render"
   },
   "dependencies": {
+    "@babel/core": "^7.14.8",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-syntax-jsx": "^7.14.5"
   },
